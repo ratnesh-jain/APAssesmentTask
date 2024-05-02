@@ -147,7 +147,7 @@ actor ImageDownloader {
     private func store(image: UIImage, for url: URL) throws {
         let localURL = localImageURL(for: url)
         try? FileManager.default.createDirectory(at: localURL.deletingLastPathComponent(), withIntermediateDirectories: true)
-        try image.pngData()?.write(to: localImageURL(for: url))
+        try image.pngData()?.write(to: localURL)
     }
 }
 
